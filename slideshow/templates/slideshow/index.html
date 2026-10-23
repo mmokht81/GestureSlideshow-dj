@@ -1,0 +1,61 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture Slideshow</title>
+    <link rel="stylesheet" href="{% static 'slideshow/css/style.css' %}">
+</head>
+<body>
+    <header class="hero">
+        <p class="eyebrow">INTERACTIVE EXPERIENCE</p>
+        <h1>کنترل صفحه با حرکت دست</h1>
+        <img
+            src="{% static 'slideshow/images/hero.png' %}"
+            alt="Gesture Slideshow"
+            class="hero-image"
+        />
+        <p>بدون لمس صفحه، فقط با حرکت انگشت اسکرول کن.</p>
+    </header>
+
+    <main class="content">
+        <section class="slide">
+            <span>01</span>
+            <h2>حرکت طبیعی</h2>
+            <p>انگشت اشاره را وارد محدوده‌ی مشخص‌شده در تصویر دوربین کن.</p>
+        </section>
+
+        <section class="slide">
+            <span>02</span>
+            <h2>اسکرول هوشمند</h2>
+            <p>با حرکت عمودی انگشت، صفحه به بالا و پایین حرکت می‌کند.</p>
+        </section>
+
+        <section class="slide">
+            <span>03</span>
+            <h2>کنترل دقیق</h2>
+            <p>وقتی انگشت از محدوده خارج شود، اسکرول متوقف می‌شود.</p>
+        </section>
+    </main>
+
+    <aside class="camera-panel">
+        <div class="camera-heading">
+            <span id="status-dot"></span>
+            <span id="status-text">در حال آماده‌سازی...</span>
+        </div>
+
+        <div class="camera-frame">
+            <video id="camera" autoplay muted playsinline></video>
+            <div class="guide-line guide-left"></div>
+            <div class="guide-line guide-right"></div>
+            <div id="camera-message">در حال اتصال به دوربین...</div>
+        </div>
+
+        <p id="gesture-text">منتظر تشخیص دست</p>
+    </aside>
+
+    <script type="module" src="{% static 'slideshow/js/gesture.js' %}"></script>
+</body>
+</html>
